@@ -9,45 +9,21 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-
+// Auth Routes - PERBAIKI METHOD YANG SALAH
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login']); // PASTIKAN METHOD login() ADA
 
 Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register']); // PASTIKAN METHOD register() ADA
 
-Route::post('/logout', function () {
-    session()->flush(); // hapus semua session
-    return redirect('/login');
-})->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // GUNAKAN CONTROLLER
 
-Route::get('/jenis-layanan', [JenisLayananController::class, 'index'])
-    ->name('jenis-layanan.index');
-
-Route::get('/transaksi', [TransaksiController::class, 'index'])
-    ->name('transaksi.index');
-
-Route::get('/riwayat', [TransaksiController::class, 'riwayat'])
-    ->name('riwayat.index');
-
-
+// Jenis Layanan Routes
 Route::resource('jenis-layanan', JenisLayananController::class);
 
-Route::get(
-    'transaksi/create/{layanan}',
-    [TransaksiController::class, 'create']
-)->name('transaksi.create');
-
-Route::resource('transaksi', TransaksiController::class);
-
-Route::get('/transaksi/berlangganan/{layanan}', 
-    [TransaksiController::class, 'create']
-)->name('transaksi.berlangganan');
-
-Route::resource('transaksi', TransaksiController::class)->except(['create']);
-
-
-Route::get('/riwayat', [TransaksiController::class, 'riwayat'])
-    ->name('riwayat.index');
-
-
+// Transaksi Routes
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+Route::get('/riwayat', [TransaksiController::class, 'riwayat'])->name('riwayat.index');
+Route::get('/transaksi/create/{layanan}', [TransaksiController::class, 'create'])->name('transaksi.create');
+Route::get('/transaksi/berlangganan/{layanan}', [TransaksiController::class, 'create'])->name('transaksi.berlangganan');
+Route::resource('transaksi', TransaksiController::class)->except(['index', 'create']);
