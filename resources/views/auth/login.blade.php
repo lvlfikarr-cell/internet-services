@@ -171,6 +171,22 @@
                                 <i class="fas fa-user-plus me-2"></i>Buat Akun Baru
                             </a>
                         </div>
+                        <div class="text-center mt-3">
+                            <a href="{{ route('google.login') }}" class="btn btn-outline-danger mt-2">
+                                    <class="flex items-center justify-center gap-3 w-full border border-gray-300 rounded-lg py-2 hover:bg-gray-50 transition">
+
+                                    {{-- Logo Google --}}
+                                    <svg width="20" height="20" viewBox="0 0 48 48">
+                                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.67 1.22 9.16 3.6l6.82-6.82C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.13 17.74 9.5 24 9.5z"/>
+                                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.14-3.09-.4-4.55H24v9.02h12.97c-.56 3.02-2.26 5.58-4.8 7.3l7.36 5.72C43.9 38.28 46.98 31.9 46.98 24.55z"/>
+                                        <path fill="#FBBC05" d="M10.54 28.59c-.48-1.43-.76-2.96-.76-4.59s.28-3.16.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.98-6.19z"/>
+                                        <path fill="#34A853" d="M24 48c6.48 0 11.9-2.13 15.86-5.78l-7.36-5.72c-2.05 1.38-4.67 2.2-8.5 2.2-6.26 0-11.57-3.63-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                                    </svg>
+
+                                    <span class="font-medium text-gray-700">
+                                        Sign in with Google
+                                    </span>
+                            </a>
                     </form>
                 </div>
 

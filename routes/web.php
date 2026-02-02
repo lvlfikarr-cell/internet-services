@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\GoogleController;
 
 Route::get('/', function () {
     return redirect()->route('login');
 });
+
+Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('google.login');
+Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
 // Auth Routes - PERBAIKI METHOD YANG SALAH
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
@@ -26,4 +30,4 @@ Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi
 Route::get('/riwayat', [TransaksiController::class, 'riwayat'])->name('riwayat.index');
 Route::get('/transaksi/create/{layanan}', [TransaksiController::class, 'create'])->name('transaksi.create');
 Route::get('/transaksi/berlangganan/{layanan}', [TransaksiController::class, 'create'])->name('transaksi.berlangganan');
-Route::resource('transaksi', TransaksiController::class)->except(['index', 'create']);
+Route::resource('transaksi', TransaksiController::class);
