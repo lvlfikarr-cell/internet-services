@@ -171,7 +171,9 @@
                                 <i class="fas fa-user-plus me-2"></i>Buat Akun Baru
                             </a>
                         </div>
-                        <div class="text-center mt-3">
+                        
+                    </form>
+                    <div class="text-center mt-3">
                             <a href="{{ route('google.login') }}" class="btn btn-outline-danger mt-2 d-flex align-items-center justify-content-center gap-2">
                                 {{-- Logo Google --}}
                                 <svg width="20" height="20" viewBox="0 0 48 48">
@@ -184,7 +186,6 @@
                                 <span>Sign in with Google</span>
                             </a>
                         </div>
-                    </form>
                 </div>
 
                 
