@@ -183,7 +183,7 @@
                             
                                 <span>Sign in with Google</span>
                             </a>
-
+                        </div>
                     </form>
                 </div>
 
