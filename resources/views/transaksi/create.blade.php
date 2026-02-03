@@ -320,7 +320,7 @@
                                     <button type="button" class="btn btn-preview me-2" onclick="previewForm()">
                                         <i class="fas fa-eye me-2"></i>Preview
                                     </button>
-                                    <button type="button" class="btn btn-primary-custom" onclick="submitFormWithConfirmation()">
+                                    <button type="submit" class="btn btn-primary-custom" onclick="submitFormWithConfirmation()">
                                         <i class="fas fa-paper-plane me-2"></i>Kirim Pendaftaran
                                     </button>
                                 </div>
